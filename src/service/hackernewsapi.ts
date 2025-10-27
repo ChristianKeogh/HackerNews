@@ -8,7 +8,12 @@ import { Observable } from 'rxjs';
 export class HackerNewsPublicService {
   private http: HttpClient = inject(HttpClient);
 
-  public getTopStories(): Observable<any> {
+  public getTopPosts(): Observable<any> {
     return this.http.get(`https://hacker-news.firebaseio.com/v0/topstories.json`);
+  }
+
+  public getPost(postNum: string): Observable<any> {
+    console.log(postNum);
+    return this.http.get(`https://hacker-news.firebaseio.com/v0/item/${postNum}.json`);
   }
 }

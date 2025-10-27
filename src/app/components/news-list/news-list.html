@@ -1,0 +1,10 @@
+@let posts = displayedFiles$ | async; @let page = currentPage$ | async; @if (posts) { @for (post of
+posts; track post) {
+<card class="news-list__card" [post]="post" [indexNum]="$index + 1 + (page ?? 0) * 25"></card>
+}
+
+<div>
+  <button (click)="showPrevious()" [disabled]="(page ?? 0) === 0">Previous</button>
+  <button (click)="showMore()">Next</button>
+</div>
+}

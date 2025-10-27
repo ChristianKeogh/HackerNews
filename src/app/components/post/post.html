@@ -1,0 +1,3 @@
+@let data = rawFiles$ | async; @if (data) {
+<pre [animate.enter]="'fade-in'" [animate.leave]="'fade-out'">{{ data | json }}</pre>
+}
