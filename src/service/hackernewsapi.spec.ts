@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Hackernewsapi } from './hackernewsapi';
+import { Hackernewsapi } from './hackernews-api.service';
 
 describe('Hackernewsapi', () => {
   let service: Hackernewsapi;
