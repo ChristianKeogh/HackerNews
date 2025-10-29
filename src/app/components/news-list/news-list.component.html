@@ -1,0 +1,14 @@
+@if (displayedPosts().length) { @for (post of displayedPosts(); track $index) {
+<card [post]="post" [indexNum]="$index + 1 + currentPage() * pageSize"></card>
+} }
+
+<mat-paginator
+  class="mat-paginator"
+  [length]="allPostIds().length"
+  [pageSize]="pageSize"
+  [pageIndex]="currentPage()"
+  [showFirstLastButtons]="true"
+  (page)="onPageChange($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

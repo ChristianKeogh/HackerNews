@@ -1,16 +1,47 @@
+@use '@angular/material' as mat;
+
+$my-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$orange-palette,
+    ),
+    typography: (
+      plain-family: 'Roboto, sans-serif',
+      brand-family: 'Open Sans, sans-serif',
+      bold-weight: 500,
+      medium-weight: 300,
+      regular-weight: 100,
+    ),
+  )
+);
+
+@include mat.core();
+@include mat.all-component-themes($my-theme);
+@include mat.typography-hierarchy($my-theme);
+
 :root {
   --primary-orange: #ff6600;
-  --secondary-orange: #ff8534;
   --primary-beige: #f6f6ef;
-  // --secondary-beige: #007bff;
 }
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+html {
+  @include mat.button-toggle-overrides(
+    (
+      shape: 2rem,
+    )
+  );
+  @include mat.card-overrides(
+    (
+      elevated-container-shape: 2px,
+      title-text-size: 1rem,
+    )
+  );
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
 }

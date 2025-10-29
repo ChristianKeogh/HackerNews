@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  font-size: small;
+  gap: 1rem;
+  &__divider {
+    color: var(--primary-orange);
+    align-content: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+}

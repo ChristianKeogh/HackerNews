@@ -1,27 +1,27 @@
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, switchMap, tap } from 'rxjs';
-import { HackerNewsPublicService } from '../../../service/hackernewsapi';
+import { Observable, switchMap } from 'rxjs';
+import { HackerNewsPublicService } from '../../../service/hackernews-api.service';
+import { HackerNewsPost } from '../../models/app.models';
 
 @Component({
   selector: 'app-post',
   imports: [AsyncPipe, JsonPipe],
-  templateUrl: './post.html',
-  styleUrl: './post.scss',
+  templateUrl: './post.component.html',
+  styleUrl: './post.component.scss',
 })
 export class PostComponent {
   private route = inject(ActivatedRoute);
   public service = inject(HackerNewsPublicService);
-  rawFiles$!: Observable<any>;
+  public rawFiles$!: Observable<HackerNewsPost>;
 
-  ngOnInit() {
+  public ngOnInit() {
     this.rawFiles$ = this.route.paramMap.pipe(
-      switchMap((params: any) => {
+      switchMap((params) => {
         const id = params.get('item');
-        return this.service.getPost(id);
-      }),
-      tap((data) => console.log('Fetched post:', data))
+        return this.service.getPost(Number(id));
+      })
     );
   }
 }

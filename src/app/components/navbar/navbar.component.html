@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <div>
+    <a href="/" class="navbar__logo">Y</a>
+    <span> Hacker News</span>
+  </div>
+</mat-toolbar>
+
+<mat-toolbar class="navbar__toolbar">
+  <div class="navbar__center">
+    <mat-button-toggle-group>
+      <mat-button-toggle (click)="onClickTop()">Top</mat-button-toggle>
+      <mat-button-toggle (click)="onClickBest()">Best</mat-button-toggle>
+      <mat-button-toggle (click)="onClickNew()">New</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="navbar__right">
+    <a matButton [routerLink]="['/login']">Submit</a>
+    <a matButton [routerLink]="['/login']">Login</a>
+  </div>
+</mat-toolbar>

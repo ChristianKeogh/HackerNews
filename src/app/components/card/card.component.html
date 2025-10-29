@@ -1,0 +1,28 @@
+@let postData = postData$ | async; @if (postData) {
+<mat-card
+  class="post-card"
+  appearance="raised"
+  [animate.enter]="'fade-in'"
+  [animate.leave]="'fade-out'"
+>
+  <mat-card-header>
+    <mat-card-title class="post-card__title">
+      {{ indexNum }}. {{ postData.title }}
+
+      @if(postData.url) {
+      <a matButton [href]="postData.url" target="_blank" rel="noopener noreferrer">
+        ({{ postData.url }}) </a
+      >}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <mat-card-subtitle
+      >{{ postData.score }} points by {{ postData.by }} {{ postData.time | relativeTime }}
+    </mat-card-subtitle>
+
+    <button matButton [routerLink]="['/post', post]">
+      {{ postData.kids?.length ?? 0 }} Comments
+    </button>
+  </mat-card-actions>
+</mat-card>
+}

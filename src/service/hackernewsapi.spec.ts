@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-
-import { Hackernewsapi } from './hackernews-api.service';
+import { HackerNewsPublicService } from './hackernews-api.service';
 
 describe('Hackernewsapi', () => {
-  let service: Hackernewsapi;
+  let service: HackerNewsPublicService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Hackernewsapi);
+    service = TestBed.inject(HackerNewsPublicService);
   });
 
   it('should be created', () => {

@@ -1,11 +1,16 @@
 import { Routes } from '@angular/router';
-import { NewsList } from './components/news-list/news-list';
-import { PostComponent } from './components/post/post';
+import { LoginComponent } from './components/login/login.component';
+import { NewsListComponent } from './components/news-list/news-list.component';
+import { PostComponent } from './components/post/post.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: NewsList,
+    component: NewsListComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'post/:item',

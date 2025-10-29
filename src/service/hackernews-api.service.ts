@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HackerNewsPost } from '../app/models/post.model';
+import { HackerNewsPost } from '../app/models/app.models';
 import { FeedType } from './current-feed.service';
 
 @Injectable({

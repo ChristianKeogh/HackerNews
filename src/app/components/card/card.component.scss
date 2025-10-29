@@ -24,9 +24,13 @@
   }
 }
 
-.card {
-  background-color: aquamarine;
-  &__link {
-    min-width: 60%;
+.post-card {
+  margin-bottom: 1rem;
+  max-height: 12rem;
+  min-width: 40rem;
+  font-size: small;
+  &__title {
+    font-weight: 400;
+    font-size: large;
   }
 }
