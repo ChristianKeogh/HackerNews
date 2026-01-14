@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'relativeTime' })
+@Pipe({ name: 'relativeTime', standalone: true })
 export class TimeAgoPipe implements PipeTransform {
   transform(timestamp: number): string {
     if (!timestamp) return '';

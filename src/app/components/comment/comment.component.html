@@ -1,0 +1,25 @@
+@if (comment(); as c) {
+  @if (!c.deleted && !c.dead) {
+    <div class="comment-container" [class.collapsed]="collapsed()">
+      <div class="meta">
+        <button class="collapse-btn" (click)="toggleCollapse()">
+          {{ collapsed() ? '[+]' : '[-]' }}
+        </button>
+        <span class="author">{{ c.by }}</span>
+        <span class="time">{{ c.time | relativeTime }}</span>
+      </div>
+      
+      @if (!collapsed()) {
+        <div class="text-content" [innerHTML]="c.text"></div>
+        
+        @if (c.kids && c.kids.length) {
+          <div class="children">
+            @for (kidId of c.kids; track kidId) {
+              <app-comment [commentId]="kidId"></app-comment>
+            }
+          </div>
+        }
+      }
+    </div>
+  }
+}

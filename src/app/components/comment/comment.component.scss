@@ -1,0 +1,72 @@
+.comment-container {
+  margin-top: 12px;
+  font-family: 'Roboto', sans-serif;
+  
+  &.collapsed {
+    margin-bottom: 8px;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #828282;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+
+    .collapse-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: monospace;
+      color: inherit;
+      padding: 0;
+      font-size: 1rem;
+      
+      &:hover {
+        color: var(--primary-orange, #ff6600);
+      }
+    }
+
+    .author {
+      font-weight: 500;
+      color: #333;
+    }
+  }
+
+  .text-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #111;
+    overflow-wrap: break-word;
+    margin-bottom: 8px;
+    
+    /* Handle HN HTML content */
+    ::ng-deep p {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+    
+    ::ng-deep pre {
+      white-space: pre-wrap;
+      background: #f6f6ef;
+      padding: 8px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    
+    ::ng-deep a {
+      color: var(--primary-orange, #ff6600);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .children {
+    padding-left: 16px;
+    border-left: 1px solid #e0e0e0;
+    margin-left: 4px;
+  }
+}
